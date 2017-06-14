@@ -11,3 +11,17 @@ c:\users\alex\documents\visual studio 2017\Projects\WpfApp5\WpfApp5\obj\Debug\Wp
 c:\users\alex\documents\visual studio 2017\Projects\WpfApp5\WpfApp5\obj\Debug\WpfApp5.csproj.GenerateResource.Cache
 c:\users\alex\documents\visual studio 2017\Projects\WpfApp5\WpfApp5\obj\Debug\WpfApp5.exe
 c:\users\alex\documents\visual studio 2017\Projects\WpfApp5\WpfApp5\obj\Debug\WpfApp5.pdb
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\bin\Debug\WpfApp5.exe.config
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\bin\Debug\WpfApp5.exe
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\bin\Debug\WpfApp5.pdb
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.csprojResolveAssemblyReference.cache
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\MainWindow.g.cs
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\App.g.cs
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5_MarkupCompile.cache
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5_MarkupCompile.lref
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\MainWindow.baml
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.g.resources
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Properties.Resources.resources
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.csproj.GenerateResource.Cache
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.exe
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.pdb
