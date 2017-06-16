@@ -54,7 +54,11 @@ namespace WpfApp5
         {
             Form3 f = new Form3();
             f.Show();
+<<<<<<< HEAD
             
+=======
+            this.Hide();
+>>>>>>> dc413c668d73ba1e3ef17e951db259b9d75c03a9
 
         }
     }
