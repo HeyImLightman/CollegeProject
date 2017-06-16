@@ -16,7 +16,7 @@
         </Grid.Background>
         <Image Source="no-translate-detected_23-2147496285.jpg" Stretch="Fill"/>
         <Menu Height="25" VerticalAlignment="Top">
-            <MenuItem Header="Для учеников" Height="25">
+            <MenuItem Header="Для учеников" Height="25" Click="MenuItem_Click_3">
                 <MenuItem Header="Список учащихся" ></MenuItem>
                 <MenuItem Header="Расписание звонков"></MenuItem>
             </MenuItem>
