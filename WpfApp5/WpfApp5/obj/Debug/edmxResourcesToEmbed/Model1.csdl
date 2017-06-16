@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="schoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Sector" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Lessens" Relationship="Self.FK_Lessens_Classes" FromRole="Classes" ToRole="Lessens" />
+    <NavigationProperty Name="Ucheniks" Relationship="Self.FK_Ucheniks_Classes" FromRole="Classes" ToRole="Ucheniks" />
+  </EntityType>
+  <EntityType Name="Lessen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="TeacherID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="ClassID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Class" Relationship="Self.FK_Lessens_Classes" FromRole="Lessens" ToRole="Classes" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_Lessens_Teachers" FromRole="Lessens" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Number" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="TableCount" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="IsDigit" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_Subjects" FromRole="Subjects" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="SubjectID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Lessens" Relationship="Self.FK_Lessens_Teachers" FromRole="Teachers" ToRole="Lessens" />
+    <NavigationProperty Name="Subject" Relationship="Self.FK_Teachers_Subjects" FromRole="Teachers" ToRole="Subjects" />
+  </EntityType>
+  <EntityType Name="Uchenik">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="9" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClassID" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Class" Relationship="Self.FK_Ucheniks_Classes" FromRole="Ucheniks" ToRole="Classes" />
+  </EntityType>
+  <Association Name="FK_Lessens_Classes">
+    <End Role="Classes" Type="Self.Class" Multiplicity="1" />
+    <End Role="Lessens" Type="Self.Lessen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Lessens">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ucheniks_Classes">
+    <End Role="Classes" Type="Self.Class" Multiplicity="1" />
+    <End Role="Ucheniks" Type="Self.Uchenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ucheniks">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lessens_Teachers">
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Lessens" Type="Self.Lessen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Lessens">
+        <PropertyRef Name="TeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teachers_Subjects">
+    <End Role="Subjects" Type="Self.Subject" Multiplicity="1" />
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="schoolEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Classes" EntityType="Self.Class" />
+    <EntitySet Name="Lessens" EntityType="Self.Lessen" />
+    <EntitySet Name="Rooms" EntityType="Self.Room" />
+    <EntitySet Name="Subjects" EntityType="Self.Subject" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+    <EntitySet Name="Ucheniks" EntityType="Self.Uchenik" />
+    <AssociationSet Name="FK_Lessens_Classes" Association="Self.FK_Lessens_Classes">
+      <End Role="Classes" EntitySet="Classes" />
+      <End Role="Lessens" EntitySet="Lessens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ucheniks_Classes" Association="Self.FK_Ucheniks_Classes">
+      <End Role="Classes" EntitySet="Classes" />
+      <End Role="Ucheniks" EntitySet="Ucheniks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lessens_Teachers" Association="Self.FK_Lessens_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Lessens" EntitySet="Lessens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teachers_Subjects" Association="Self.FK_Teachers_Subjects">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
