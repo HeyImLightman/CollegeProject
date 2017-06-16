@@ -27,12 +27,12 @@ namespace WpfApp5
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-        
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -47,6 +47,14 @@ namespace WpfApp5
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
+            this.Hide();
 
         }
     }
