@@ -34,3 +34,5 @@ D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.exe
 D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.pdb
 D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Form3.resources
 D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Classes.resources
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Subjects.resources
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Teachers.resources
