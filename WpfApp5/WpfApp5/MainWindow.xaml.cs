@@ -37,10 +37,6 @@ namespace WpfApp5
             MessageBox.Show("Чирков А.А & Кондратенко А.С");
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
@@ -52,8 +48,22 @@ namespace WpfApp5
             private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
             
-            Form3 f2 = new Form3();
-            f2.ShowDialog();
+            Form3 f1 = new Form3();
+            f1.ShowDialog();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+
+            Teachers f1 = new Teachers();
+            f1.ShowDialog();
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+
+            Subjects f1 = new Subjects();
+            f1.ShowDialog();
         }
     }
 }
