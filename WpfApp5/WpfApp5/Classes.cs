@@ -32,11 +32,6 @@ namespace WpfApp5
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //this.classesTableAdapter.SaveFileDialog(this.schoolDataSet);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.classesTableAdapter.Update(this.schoolDataSet);
