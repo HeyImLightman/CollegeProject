@@ -45,7 +45,7 @@ namespace WpfApp5
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             Classes f1 = new Classes();
-            f1.Show();
+            f1.ShowDialog();
         }
 
         
@@ -53,7 +53,7 @@ namespace WpfApp5
         {
             
             Form3 f2 = new Form3();
-            f2.Show();
+            f2.ShowDialog();
         }
     }
 }
