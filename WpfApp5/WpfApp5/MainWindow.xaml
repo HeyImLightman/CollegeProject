@@ -16,9 +16,15 @@
         </Grid.Background>
         <Image Source="no-translate-detected_23-2147496285.jpg" Stretch="Fill"/>
         <Menu Height="25" VerticalAlignment="Top">
-            <MenuItem Header="Для учителей" Height="25" Click="MenuItem_Click_2">
+            <MenuItem Header="Для администрации" Height="25">
                 <MenuItem Header="Список классов" Click="MenuItem_Click_3"></MenuItem>
-                <MenuItem Header="Список учащихся" Click="MenuItem_Click_4" ></MenuItem>
+                <MenuItem Header="Список учащихся" Click="MenuItem_Click_4"></MenuItem>
+                <MenuItem Header="Список преподователей" Click="MenuItem_Click_2"></MenuItem>
+                <MenuItem Header="Список предметов" Click="MenuItem_Click_5"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Для учителей" Height="25" >
+                <MenuItem Header="Выставление оценок"></MenuItem>
+                <MenuItem Header="Список учиников в классе" ></MenuItem>
                 <MenuItem Header="Расписание звонков"></MenuItem>
             </MenuItem>
             <MenuItem Header="Сведения" Height="25" >
