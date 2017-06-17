@@ -31,5 +31,10 @@ namespace WpfApp5
             this.pupilsTableAdapter.Fill(this.schoolDataSet.Pupils);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.pupilsTableAdapter.Update(this.schoolDataSet);
+        }
     }
 }

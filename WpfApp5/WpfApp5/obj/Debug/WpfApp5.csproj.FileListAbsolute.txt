@@ -33,3 +33,4 @@ D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.csproj.GenerateResource
 D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.exe
 D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.pdb
 D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Form3.resources
+D:\SAVE\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Classes.resources

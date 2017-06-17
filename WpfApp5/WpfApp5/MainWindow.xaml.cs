@@ -25,19 +25,11 @@ namespace WpfApp5
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
@@ -47,19 +39,21 @@ namespace WpfApp5
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
-            Form3 f = new Form3();
-            f.Show();
-<<<<<<< HEAD
-            
-=======
-            this.Hide();
->>>>>>> dc413c668d73ba1e3ef17e951db259b9d75c03a9
+            Classes f1 = new Classes();
+            f1.Show();
+        }
 
+        
+            private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            
+            Form3 f2 = new Form3();
+            f2.Show();
         }
     }
 }
