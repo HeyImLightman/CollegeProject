@@ -1,7 +1,7 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Lessens]    Script Date: 11.06.2017 21:44:58 ******/
+/****** Object:  Table [dbo].[Lessens]    Script Date: 19.06.2017 13:52:53 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,9 +9,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Lessens](
-	[ID] [decimal](9, 0) NOT NULL,
-	[TeacherID] [decimal](9, 0) NOT NULL,
-	[ClassID] [decimal](9, 0) NOT NULL,
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[TeacherID] [int] NOT NULL,
+	[ClassID] [int] NOT NULL,
  CONSTRAINT [PK_Lessens] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC

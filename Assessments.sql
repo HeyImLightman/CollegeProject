@@ -1,7 +1,7 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Assessments]    Script Date: 17.06.2017 22:10:43 ******/
+/****** Object:  Table [dbo].[Assessments]    Script Date: 19.06.2017 13:53:19 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,9 +9,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Assessments](
-	[ID] [decimal](9, 0) NOT NULL,
-	[PupilsID] [decimal](9, 0) NOT NULL,
-	[SubjectID] [decimal](9, 0) NOT NULL,
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[PupilsID] [int] NOT NULL,
+	[SubjectID] [int] NOT NULL,
 	[Attendance] [bit] NULL,
 	[Assessment] [int] NULL,
  CONSTRAINT [PK_Assessments] PRIMARY KEY CLUSTERED 
