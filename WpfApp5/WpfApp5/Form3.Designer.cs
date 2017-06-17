@@ -83,7 +83,7 @@
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(713, 41);
+            iDLabel.Location = new System.Drawing.Point(773, 36);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(21, 13);
             iDLabel.TabIndex = 2;
@@ -92,7 +92,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(713, 67);
+            nameLabel.Location = new System.Drawing.Point(773, 62);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 4;
@@ -101,7 +101,7 @@
             // classIDLabel
             // 
             classIDLabel.AutoSize = true;
-            classIDLabel.Location = new System.Drawing.Point(713, 93);
+            classIDLabel.Location = new System.Drawing.Point(773, 88);
             classIDLabel.Name = "classIDLabel";
             classIDLabel.Size = new System.Drawing.Size(49, 13);
             classIDLabel.TabIndex = 6;
@@ -110,7 +110,7 @@
             // numberLabel
             // 
             numberLabel.AutoSize = true;
-            numberLabel.Location = new System.Drawing.Point(713, 119);
+            numberLabel.Location = new System.Drawing.Point(773, 114);
             numberLabel.Name = "numberLabel";
             numberLabel.Size = new System.Drawing.Size(47, 13);
             numberLabel.TabIndex = 8;
@@ -119,7 +119,7 @@
             // adressLabel
             // 
             adressLabel.AutoSize = true;
-            adressLabel.Location = new System.Drawing.Point(713, 145);
+            adressLabel.Location = new System.Drawing.Point(773, 140);
             adressLabel.Name = "adressLabel";
             adressLabel.Size = new System.Drawing.Size(42, 13);
             adressLabel.TabIndex = 10;
@@ -128,7 +128,7 @@
             // dOBLabel
             // 
             dOBLabel.AutoSize = true;
-            dOBLabel.Location = new System.Drawing.Point(713, 172);
+            dOBLabel.Location = new System.Drawing.Point(773, 167);
             dOBLabel.Name = "dOBLabel";
             dOBLabel.Size = new System.Drawing.Size(33, 13);
             dOBLabel.TabIndex = 12;
@@ -150,6 +150,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AssessmentsTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ClassesTableAdapter = null;
             this.tableAdapterManager.LessensTableAdapter = null;
@@ -185,7 +186,7 @@
             this.pupilsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.pupilsBindingNavigator.Name = "pupilsBindingNavigator";
             this.pupilsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.pupilsBindingNavigator.Size = new System.Drawing.Size(1003, 25);
+            this.pupilsBindingNavigator.Size = new System.Drawing.Size(1049, 25);
             this.pupilsBindingNavigator.TabIndex = 0;
             this.pupilsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -297,10 +298,10 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.pupilsDataGridView.DataSource = this.pupilsBindingSource;
-            this.pupilsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.pupilsDataGridView.Location = new System.Drawing.Point(12, 0);
             this.pupilsDataGridView.Name = "pupilsDataGridView";
             this.pupilsDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pupilsDataGridView.Size = new System.Drawing.Size(645, 316);
+            this.pupilsDataGridView.Size = new System.Drawing.Size(755, 316);
             this.pupilsDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -343,7 +344,7 @@
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pupilsBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(768, 38);
+            this.iDTextBox.Location = new System.Drawing.Point(828, 33);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(200, 20);
             this.iDTextBox.TabIndex = 3;
@@ -351,7 +352,7 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pupilsBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(768, 64);
+            this.nameTextBox.Location = new System.Drawing.Point(828, 59);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(200, 20);
             this.nameTextBox.TabIndex = 5;
@@ -359,7 +360,7 @@
             // classIDTextBox
             // 
             this.classIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pupilsBindingSource, "ClassID", true));
-            this.classIDTextBox.Location = new System.Drawing.Point(768, 90);
+            this.classIDTextBox.Location = new System.Drawing.Point(828, 85);
             this.classIDTextBox.Name = "classIDTextBox";
             this.classIDTextBox.Size = new System.Drawing.Size(200, 20);
             this.classIDTextBox.TabIndex = 7;
@@ -367,7 +368,7 @@
             // numberTextBox
             // 
             this.numberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pupilsBindingSource, "Number", true));
-            this.numberTextBox.Location = new System.Drawing.Point(768, 116);
+            this.numberTextBox.Location = new System.Drawing.Point(828, 111);
             this.numberTextBox.Name = "numberTextBox";
             this.numberTextBox.Size = new System.Drawing.Size(200, 20);
             this.numberTextBox.TabIndex = 9;
@@ -375,7 +376,7 @@
             // adressTextBox
             // 
             this.adressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pupilsBindingSource, "Adress", true));
-            this.adressTextBox.Location = new System.Drawing.Point(768, 142);
+            this.adressTextBox.Location = new System.Drawing.Point(828, 137);
             this.adressTextBox.Name = "adressTextBox";
             this.adressTextBox.Size = new System.Drawing.Size(200, 20);
             this.adressTextBox.TabIndex = 11;
@@ -383,18 +384,18 @@
             // dOBDateTimePicker
             // 
             this.dOBDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pupilsBindingSource, "DOB", true));
-            this.dOBDateTimePicker.Location = new System.Drawing.Point(768, 168);
+            this.dOBDateTimePicker.Location = new System.Drawing.Point(828, 163);
             this.dOBDateTimePicker.Name = "dOBDateTimePicker";
             this.dOBDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dOBDateTimePicker.TabIndex = 13;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(716, 224);
+            this.button1.Location = new System.Drawing.Point(773, 224);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Обновить";
+            this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -402,7 +403,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 437);
+            this.ClientSize = new System.Drawing.Size(1049, 437);
             this.Controls.Add(this.button1);
             this.Controls.Add(iDLabel);
             this.Controls.Add(this.iDTextBox);
