@@ -1,7 +1,7 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Lessens]    Script Date: 19.06.2017 13:52:53 ******/
+/****** Object:  Table [dbo].[Lessens]    Script Date: 19.06.2017 15:21:02 ******/
 SET ANSI_NULLS ON
 GO
 

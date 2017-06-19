@@ -1,7 +1,7 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Rooms]    Script Date: 19.06.2017 13:52:28 ******/
+/****** Object:  Table [dbo].[Rooms]    Script Date: 19.06.2017 15:21:36 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Rooms](
-	[ID] [int] NOT NULL,
+	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[Number] [int] NOT NULL,
 	[TableCount] [int] NOT NULL,
 	[IsDigit] [bit] NOT NULL,
