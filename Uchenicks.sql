@@ -1,17 +1,17 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Pupils]    Script Date: 19.06.2017 15:21:29 ******/
+/****** Object:  Table [dbo].[Ucheniks]    Script Date: 11.06.2017 21:46:00 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Pupils](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
+CREATE TABLE [dbo].[Ucheniks](
+	[ID] [decimal](9, 0) NOT NULL,
 	[Name] [nvarchar](500) NOT NULL,
-	[ClassID] [int] NOT NULL,
+	[ClassID] [decimal](9, 0) NOT NULL,
 	[Number] [nvarchar](50) NULL,
 	[Adress] [nvarchar](50) NULL,
 	[DOB] [datetime] NULL,
@@ -23,10 +23,10 @@ CREATE TABLE [dbo].[Pupils](
 
 GO
 
-ALTER TABLE [dbo].[Pupils]  WITH CHECK ADD  CONSTRAINT [FK_Ucheniks_Classes] FOREIGN KEY([ClassID])
+ALTER TABLE [dbo].[Ucheniks]  WITH CHECK ADD  CONSTRAINT [FK_Ucheniks_Classes] FOREIGN KEY([ClassID])
 REFERENCES [dbo].[Classes] ([ID])
 GO
 
-ALTER TABLE [dbo].[Pupils] CHECK CONSTRAINT [FK_Ucheniks_Classes]
+ALTER TABLE [dbo].[Ucheniks] CHECK CONSTRAINT [FK_Ucheniks_Classes]
 GO
 
