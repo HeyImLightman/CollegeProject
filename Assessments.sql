@@ -1,7 +1,7 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Assessments]    Script Date: 19.06.2017 13:53:19 ******/
+/****** Object:  Table [dbo].[Assessments]    Script Date: 19.06.2017 15:20:02 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,14 +10,11 @@ GO
 
 CREATE TABLE [dbo].[Assessments](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NULL,
 	[PupilsID] [int] NOT NULL,
 	[SubjectID] [int] NOT NULL,
 	[Attendance] [bit] NULL,
-	[Assessment] [int] NULL,
- CONSTRAINT [PK_Assessments] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	[Assessment] [int] NULL
 ) ON [PRIMARY]
 
 GO

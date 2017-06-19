@@ -20,9 +20,9 @@ namespace WpfApp5 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("schoolDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("schoolDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class schoolDataSet : global::System.Data.DataSet {
+    public partial class schoolDataSet1 : global::System.Data.DataSet {
         
         private AssessmentsDataTable tableAssessments;
         
@@ -58,7 +58,7 @@ namespace WpfApp5 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public schoolDataSet() {
+        public schoolDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -69,7 +69,7 @@ namespace WpfApp5 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected schoolDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected schoolDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -246,7 +246,7 @@ namespace WpfApp5 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            schoolDataSet cln = ((schoolDataSet)(base.Clone()));
+            schoolDataSet1 cln = ((schoolDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -388,9 +388,9 @@ namespace WpfApp5 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "schoolDataSet";
+            this.DataSetName = "schoolDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/schoolDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/schoolDataSet11.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAssessments = new AssessmentsDataTable();
@@ -498,7 +498,7 @@ namespace WpfApp5 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            schoolDataSet ds = new schoolDataSet();
+            schoolDataSet1 ds = new schoolDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -575,8 +575,6 @@ namespace WpfApp5 {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnName;
-            
             private global::System.Data.DataColumn columnPupilsID;
             
             private global::System.Data.DataColumn columnSubjectID;
@@ -623,14 +621,6 @@ namespace WpfApp5 {
             public global::System.Data.DataColumn IDColumn {
                 get {
                     return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
                 }
             }
             
@@ -703,24 +693,30 @@ namespace WpfApp5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AssessmentsRow AddAssessmentsRow(string Name, PupilsRow parentPupilsRowByFK_Assessments_Pupils, SubjectsRow parentSubjectsRowByFK_Assessments_Subjects, bool Attendance, int Assessment) {
+            public AssessmentsRow AddAssessmentsRow(PupilsRow parentPupilsRowByFK_Assessments_Pupils, SubjectsRow parentSubjectsRowByFK_Assessments_Subjects, bool Attendance, int Assessment) {
                 AssessmentsRow rowAssessmentsRow = ((AssessmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Name,
                         null,
                         null,
                         Attendance,
                         Assessment};
                 if ((parentPupilsRowByFK_Assessments_Pupils != null)) {
-                    columnValuesArray[2] = parentPupilsRowByFK_Assessments_Pupils[0];
+                    columnValuesArray[1] = parentPupilsRowByFK_Assessments_Pupils[0];
                 }
                 if ((parentSubjectsRowByFK_Assessments_Subjects != null)) {
-                    columnValuesArray[3] = parentSubjectsRowByFK_Assessments_Subjects[0];
+                    columnValuesArray[2] = parentSubjectsRowByFK_Assessments_Subjects[0];
                 }
                 rowAssessmentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAssessmentsRow);
                 return rowAssessmentsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AssessmentsRow FindByID(int ID) {
+                return ((AssessmentsRow)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -741,7 +737,6 @@ namespace WpfApp5 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnName = base.Columns["Name"];
                 this.columnPupilsID = base.Columns["PupilsID"];
                 this.columnSubjectID = base.Columns["SubjectID"];
                 this.columnAttendance = base.Columns["Attendance"];
@@ -753,8 +748,6 @@ namespace WpfApp5 {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
                 this.columnPupilsID = new global::System.Data.DataColumn("PupilsID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPupilsID);
                 this.columnSubjectID = new global::System.Data.DataColumn("SubjectID", typeof(int), null, global::System.Data.MappingType.Element);
@@ -763,12 +756,14 @@ namespace WpfApp5 {
                 base.Columns.Add(this.columnAttendance);
                 this.columnAssessment = new global::System.Data.DataColumn("Assessment", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAssessment);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
-                this.columnName.MaxLength = 50;
+                this.columnID.Unique = true;
                 this.columnPupilsID.AllowDBNull = false;
                 this.columnSubjectID.AllowDBNull = false;
             }
@@ -838,7 +833,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1162,7 +1157,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1460,7 +1455,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1742,7 +1737,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2082,7 +2077,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2258,13 +2253,16 @@ namespace WpfApp5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomsRow AddRoomsRow(int Number, int TableCount, bool IsDigit) {
+            public RoomsRow AddRoomsRow(ClassesRow parentClassesRowByFK_Rooms_Classes, int Number, int TableCount, bool IsDigit) {
                 RoomsRow rowRoomsRow = ((RoomsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Number,
                         TableCount,
                         IsDigit};
+                if ((parentClassesRowByFK_Rooms_Classes != null)) {
+                    columnValuesArray[0] = parentClassesRowByFK_Rooms_Classes[2];
+                }
                 rowRoomsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRoomsRow);
                 return rowRoomsRow;
@@ -2313,11 +2311,7 @@ namespace WpfApp5 {
                 base.Columns.Add(this.columnIsDigit);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnNumber.AllowDBNull = false;
                 this.columnTableCount.AllowDBNull = false;
@@ -2389,7 +2383,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2667,7 +2661,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2742,8 +2736,6 @@ namespace WpfApp5 {
             private global::System.Data.DataColumn columnAdress;
             
             private global::System.Data.DataColumn columnDOB;
-            
-            private global::System.Data.DataColumn columnSubjectName;
             
             private global::System.Data.DataColumn columnSubjectID;
             
@@ -2822,14 +2814,6 @@ namespace WpfApp5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SubjectNameColumn {
-                get {
-                    return this.columnSubjectName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn SubjectIDColumn {
                 get {
                     return this.columnSubjectID;
@@ -2873,7 +2857,7 @@ namespace WpfApp5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TeachersRow AddTeachersRow(string Name, string Number, string Adress, System.DateTime DOB, string SubjectName, SubjectsRow parentSubjectsRowByFK_Teachers_Subjects) {
+            public TeachersRow AddTeachersRow(string Name, string Number, string Adress, System.DateTime DOB, SubjectsRow parentSubjectsRowByFK_Teachers_Subjects) {
                 TeachersRow rowTeachersRow = ((TeachersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2881,10 +2865,9 @@ namespace WpfApp5 {
                         Number,
                         Adress,
                         DOB,
-                        SubjectName,
                         null};
                 if ((parentSubjectsRowByFK_Teachers_Subjects != null)) {
-                    columnValuesArray[6] = parentSubjectsRowByFK_Teachers_Subjects[0];
+                    columnValuesArray[5] = parentSubjectsRowByFK_Teachers_Subjects[0];
                 }
                 rowTeachersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTeachersRow);
@@ -2920,7 +2903,6 @@ namespace WpfApp5 {
                 this.columnNumber = base.Columns["Number"];
                 this.columnAdress = base.Columns["Adress"];
                 this.columnDOB = base.Columns["DOB"];
-                this.columnSubjectName = base.Columns["SubjectName"];
                 this.columnSubjectID = base.Columns["SubjectID"];
             }
             
@@ -2937,8 +2919,6 @@ namespace WpfApp5 {
                 base.Columns.Add(this.columnAdress);
                 this.columnDOB = new global::System.Data.DataColumn("DOB", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDOB);
-                this.columnSubjectName = new global::System.Data.DataColumn("SubjectName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubjectName);
                 this.columnSubjectID = new global::System.Data.DataColumn("SubjectID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubjectID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -2953,8 +2933,6 @@ namespace WpfApp5 {
                 this.columnName.MaxLength = 500;
                 this.columnNumber.MaxLength = 50;
                 this.columnAdress.MaxLength = 50;
-                this.columnSubjectName.AllowDBNull = false;
-                this.columnSubjectName.MaxLength = 50;
                 this.columnSubjectID.AllowDBNull = false;
             }
             
@@ -3023,7 +3001,7 @@ namespace WpfApp5 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                schoolDataSet ds = new schoolDataSet();
+                schoolDataSet1 ds = new schoolDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3109,22 +3087,6 @@ namespace WpfApp5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssessments.NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Assessments\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssessments.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int PupilsID {
                 get {
                     return ((int)(this[this.tableAssessments.PupilsIDColumn]));
@@ -3197,18 +3159,6 @@ namespace WpfApp5 {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Assessments_Subjects"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableAssessments.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableAssessments.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3877,17 +3827,6 @@ namespace WpfApp5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SubjectName {
-                get {
-                    return ((string)(this[this.tableTeachers.SubjectNameColumn]));
-                }
-                set {
-                    this[this.tableTeachers.SubjectNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SubjectID {
                 get {
                     return ((int)(this[this.tableTeachers.SubjectIDColumn]));
@@ -4229,7 +4168,7 @@ namespace WpfApp5 {
         }
     }
 }
-namespace WpfApp5.schoolDataSetTableAdapters {
+namespace WpfApp5.schoolDataSet1TableAdapters {
     
     
     /// <summary>
@@ -4354,22 +4293,50 @@ namespace WpfApp5.schoolDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Assessments";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("PupilsID", "PupilsID");
             tableMapping.ColumnMappings.Add("SubjectID", "SubjectID");
             tableMapping.ColumnMappings.Add("Attendance", "Attendance");
             tableMapping.ColumnMappings.Add("Assessment", "Assessment");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Assessments] WHERE (([ID] = @Original_ID) AND ([PupilsID] = @Original_PupilsID) AND ([SubjectID] = @Original_SubjectID) AND ((@IsNull_Attendance = 1 AND [Attendance] IS NULL) OR ([Attendance] = @Original_Attendance)) AND ((@IsNull_Assessment = 1 AND [Assessment] IS NULL) OR ([Assessment] = @Original_Assessment)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PupilsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PupilsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Attendance", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Assessment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assessment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Assessment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assessment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Assessments] ([Name], [PupilsID], [SubjectID], [Attendance], [" +
-                "Assessment]) VALUES (@Name, @PupilsID, @SubjectID, @Attendance, @Assessment)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Assessments] ([PupilsID], [SubjectID], [Attendance], [Assessme" +
+                "nt]) VALUES (@PupilsID, @SubjectID, @Attendance, @Assessment);\r\nSELECT ID, Pupil" +
+                "sID, SubjectID, Attendance, Assessment FROM Assessments WHERE (ID = SCOPE_IDENTI" +
+                "TY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PupilsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PupilsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assessment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assessment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Assessments] SET [PupilsID] = @PupilsID, [SubjectID] = @SubjectID, [Attendance] = @Attendance, [Assessment] = @Assessment WHERE (([ID] = @Original_ID) AND ([PupilsID] = @Original_PupilsID) AND ([SubjectID] = @Original_SubjectID) AND ((@IsNull_Attendance = 1 AND [Attendance] IS NULL) OR ([Attendance] = @Original_Attendance)) AND ((@IsNull_Assessment = 1 AND [Assessment] IS NULL) OR ([Assessment] = @Original_Assessment)));
+SELECT ID, PupilsID, SubjectID, Attendance, Assessment FROM Assessments WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PupilsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PupilsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assessment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assessment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PupilsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PupilsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Attendance", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Assessment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assessment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Assessment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assessment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4385,8 +4352,7 @@ namespace WpfApp5.schoolDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Name, PupilsID, SubjectID, Attendance, Assessment FROM dbo.Assessments" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT ID, PupilsID, SubjectID, Attendance, Assessment FROM dbo.Assessments";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4394,7 +4360,7 @@ namespace WpfApp5.schoolDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.AssessmentsDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.AssessmentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4407,9 +4373,9 @@ namespace WpfApp5.schoolDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.AssessmentsDataTable GetData() {
+        public virtual schoolDataSet1.AssessmentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.AssessmentsDataTable dataTable = new schoolDataSet.AssessmentsDataTable();
+            schoolDataSet1.AssessmentsDataTable dataTable = new schoolDataSet1.AssessmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4417,14 +4383,14 @@ namespace WpfApp5.schoolDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.AssessmentsDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.AssessmentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Assessments");
         }
         
@@ -4446,27 +4412,61 @@ namespace WpfApp5.schoolDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int PupilsID, int SubjectID, global::System.Nullable<bool> Attendance, global::System.Nullable<int> Assessment) {
-            if ((Name == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, int Original_PupilsID, int Original_SubjectID, global::System.Nullable<bool> Original_Attendance, global::System.Nullable<int> Original_Assessment) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_PupilsID));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_SubjectID));
+            if ((Original_Attendance.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_Attendance.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PupilsID));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(SubjectID));
+            if ((Original_Assessment.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Assessment.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int PupilsID, int SubjectID, global::System.Nullable<bool> Attendance, global::System.Nullable<int> Assessment) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PupilsID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SubjectID));
             if ((Attendance.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(Attendance.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(Attendance.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Assessment.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Assessment.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Assessment.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Assessment.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4482,6 +4482,69 @@ namespace WpfApp5.schoolDataSetTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int PupilsID, int SubjectID, global::System.Nullable<bool> Attendance, global::System.Nullable<int> Assessment, int Original_ID, int Original_PupilsID, int Original_SubjectID, global::System.Nullable<bool> Original_Attendance, global::System.Nullable<int> Original_Assessment, int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PupilsID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(SubjectID));
+            if ((Attendance.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(Attendance.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Assessment.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Assessment.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_PupilsID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_SubjectID));
+            if ((Original_Attendance.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Original_Attendance.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Assessment.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Assessment.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int PupilsID, int SubjectID, global::System.Nullable<bool> Attendance, global::System.Nullable<int> Assessment, int Original_ID, int Original_PupilsID, int Original_SubjectID, global::System.Nullable<bool> Original_Attendance, global::System.Nullable<int> Original_Assessment) {
+            return this.Update(PupilsID, SubjectID, Attendance, Assessment, Original_ID, Original_PupilsID, Original_SubjectID, Original_Attendance, Original_Assessment, Original_ID);
         }
     }
     
@@ -4668,7 +4731,7 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.ClassesDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.ClassesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4681,9 +4744,9 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.ClassesDataTable GetData() {
+        public virtual schoolDataSet1.ClassesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.ClassesDataTable dataTable = new schoolDataSet.ClassesDataTable();
+            schoolDataSet1.ClassesDataTable dataTable = new schoolDataSet1.ClassesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4691,14 +4754,14 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.ClassesDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.ClassesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Classes");
         }
         
@@ -5032,7 +5095,7 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.LessensDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.LessensDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5045,9 +5108,9 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.LessensDataTable GetData() {
+        public virtual schoolDataSet1.LessensDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.LessensDataTable dataTable = new schoolDataSet.LessensDataTable();
+            schoolDataSet1.LessensDataTable dataTable = new schoolDataSet1.LessensDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5055,14 +5118,14 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.LessensDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.LessensDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Lessens");
         }
         
@@ -5318,7 +5381,7 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.LoginDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.LoginDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5331,9 +5394,9 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.LoginDataTable GetData() {
+        public virtual schoolDataSet1.LoginDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.LoginDataTable dataTable = new schoolDataSet.LoginDataTable();
+            schoolDataSet1.LoginDataTable dataTable = new schoolDataSet1.LoginDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5341,14 +5404,14 @@ SELECT ID, Name, RoomID, Sector, Description FROM Classes WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.LoginDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.LoginDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Login");
         }
         
@@ -5596,7 +5659,7 @@ SELECT ID, Name, ClassID, Number, Adress, DOB FROM Pupils WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.PupilsDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.PupilsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5609,9 +5672,9 @@ SELECT ID, Name, ClassID, Number, Adress, DOB FROM Pupils WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.PupilsDataTable GetData() {
+        public virtual schoolDataSet1.PupilsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.PupilsDataTable dataTable = new schoolDataSet.PupilsDataTable();
+            schoolDataSet1.PupilsDataTable dataTable = new schoolDataSet1.PupilsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5619,14 +5682,14 @@ SELECT ID, Name, ClassID, Number, Adress, DOB FROM Pupils WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.PupilsDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.PupilsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Pupils");
         }
         
@@ -5970,18 +6033,20 @@ SELECT ID, Name, ClassID, Number, Adress, DOB FROM Pupils WHERE (ID = @ID)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsDigit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDigit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rooms] ([Number], [TableCount], [IsDigit]) VALUES (@Number, @T" +
-                "ableCount, @IsDigit);\r\nSELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (" +
-                "ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rooms] ([ID], [Number], [TableCount], [IsDigit]) VALUES (@ID, " +
+                "@Number, @TableCount, @IsDigit);\r\nSELECT ID, Number, TableCount, IsDigit FROM Ro" +
+                "oms WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TableCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TableCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDigit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDigit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Rooms] SET [Number] = @Number, [TableCount] = @TableCount, [IsDigit] = @IsDigit WHERE (([ID] = @Original_ID) AND ([Number] = @Original_Number) AND ([TableCount] = @Original_TableCount) AND ([IsDigit] = @Original_IsDigit));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Rooms] SET [ID] = @ID, [Number] = @Number, [TableCount] = @TableCount, [IsDigit] = @IsDigit WHERE (([ID] = @Original_ID) AND ([Number] = @Original_Number) AND ([TableCount] = @Original_TableCount) AND ([IsDigit] = @Original_IsDigit));
 SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TableCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TableCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDigit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDigit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5989,7 +6054,6 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TableCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TableCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsDigit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDigit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6013,7 +6077,7 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.RoomsDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.RoomsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6026,9 +6090,9 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.RoomsDataTable GetData() {
+        public virtual schoolDataSet1.RoomsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.RoomsDataTable dataTable = new schoolDataSet.RoomsDataTable();
+            schoolDataSet1.RoomsDataTable dataTable = new schoolDataSet1.RoomsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6036,14 +6100,14 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.RoomsDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.RoomsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Rooms");
         }
         
@@ -6091,10 +6155,11 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Number, int TableCount, bool IsDigit) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Number));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TableCount));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(IsDigit));
+        public virtual int Insert(int ID, int Number, int TableCount, bool IsDigit) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Number));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(TableCount));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(IsDigit));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6115,15 +6180,15 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Number, int TableCount, bool IsDigit, int Original_ID, int Original_Number, int Original_TableCount, bool Original_IsDigit, int ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Number));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TableCount));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(IsDigit));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Number));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_TableCount));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Original_IsDigit));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID));
+        public virtual int Update(int ID, int Number, int TableCount, bool IsDigit, int Original_ID, int Original_Number, int Original_TableCount, bool Original_IsDigit) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Number));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(TableCount));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(IsDigit));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Number));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_TableCount));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_IsDigit));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6145,7 +6210,7 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int Number, int TableCount, bool IsDigit, int Original_ID, int Original_Number, int Original_TableCount, bool Original_IsDigit) {
-            return this.Update(Number, TableCount, IsDigit, Original_ID, Original_Number, Original_TableCount, Original_IsDigit, Original_ID);
+            return this.Update(Original_ID, Number, TableCount, IsDigit, Original_ID, Original_Number, Original_TableCount, Original_IsDigit);
         }
     }
     
@@ -6318,7 +6383,7 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.SubjectsDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.SubjectsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6331,9 +6396,9 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.SubjectsDataTable GetData() {
+        public virtual schoolDataSet1.SubjectsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.SubjectsDataTable dataTable = new schoolDataSet.SubjectsDataTable();
+            schoolDataSet1.SubjectsDataTable dataTable = new schoolDataSet1.SubjectsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6341,14 +6406,14 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.SubjectsDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.SubjectsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Subjects");
         }
         
@@ -6592,12 +6657,11 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
             tableMapping.ColumnMappings.Add("Number", "Number");
             tableMapping.ColumnMappings.Add("Adress", "Adress");
             tableMapping.ColumnMappings.Add("DOB", "DOB");
-            tableMapping.ColumnMappings.Add("SubjectName", "SubjectName");
             tableMapping.ColumnMappings.Add("SubjectID", "SubjectID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Teachers] WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ((@IsNull_Number = 1 AND [Number] IS NULL) OR ([Number] = @Original_Number)) AND ((@IsNull_Adress = 1 AND [Adress] IS NULL) OR ([Adress] = @Original_Adress)) AND ((@IsNull_DOB = 1 AND [DOB] IS NULL) OR ([DOB] = @Original_DOB)) AND ([SubjectName] = @Original_SubjectName) AND ([SubjectID] = @Original_SubjectID))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Teachers] WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ((@IsNull_Number = 1 AND [Number] IS NULL) OR ([Number] = @Original_Number)) AND ((@IsNull_Adress = 1 AND [Adress] IS NULL) OR ([Adress] = @Original_Adress)) AND ((@IsNull_DOB = 1 AND [DOB] IS NULL) OR ([DOB] = @Original_DOB)) AND ([SubjectID] = @Original_SubjectID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6607,29 +6671,27 @@ SELECT ID, Number, TableCount, IsDigit FROM Rooms WHERE (ID = @ID)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DOB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DOB", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubjectName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Teachers] ([Name], [Number], [Adress], [DOB], [SubjectName], [SubjectID]) VALUES (@Name, @Number, @Adress, @DOB, @SubjectName, @SubjectID);
-SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Teachers] ([Name], [Number], [Adress], [DOB], [SubjectID]) VAL" +
+                "UES (@Name, @Number, @Adress, @DOB, @SubjectID);\r\nSELECT ID, Name, Number, Adres" +
+                "s, DOB, SubjectID FROM Teachers WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DOB", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Teachers] SET [Name] = @Name, [Number] = @Number, [Adress] = @Adress, [DOB] = @DOB, [SubjectName] = @SubjectName, [SubjectID] = @SubjectID WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ((@IsNull_Number = 1 AND [Number] IS NULL) OR ([Number] = @Original_Number)) AND ((@IsNull_Adress = 1 AND [Adress] IS NULL) OR ([Adress] = @Original_Adress)) AND ((@IsNull_DOB = 1 AND [DOB] IS NULL) OR ([DOB] = @Original_DOB)) AND ([SubjectName] = @Original_SubjectName) AND ([SubjectID] = @Original_SubjectID));
-SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Teachers] SET [Name] = @Name, [Number] = @Number, [Adress] = @Adress, [DOB] = @DOB, [SubjectID] = @SubjectID WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ((@IsNull_Number = 1 AND [Number] IS NULL) OR ([Number] = @Original_Number)) AND ((@IsNull_Adress = 1 AND [Adress] IS NULL) OR ([Adress] = @Original_Adress)) AND ((@IsNull_DOB = 1 AND [DOB] IS NULL) OR ([DOB] = @Original_DOB)) AND ([SubjectID] = @Original_SubjectID));
+SELECT ID, Name, Number, Adress, DOB, SubjectID FROM Teachers WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DOB", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6639,7 +6701,6 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DOB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DOB", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubjectName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -6657,7 +6718,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM dbo.Teachers";
+            this._commandCollection[0].CommandText = "SELECT ID, Name, Number, Adress, DOB, SubjectID FROM dbo.Teachers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6665,7 +6726,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(schoolDataSet.TeachersDataTable dataTable) {
+        public virtual int Fill(schoolDataSet1.TeachersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6678,9 +6739,9 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual schoolDataSet.TeachersDataTable GetData() {
+        public virtual schoolDataSet1.TeachersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            schoolDataSet.TeachersDataTable dataTable = new schoolDataSet.TeachersDataTable();
+            schoolDataSet1.TeachersDataTable dataTable = new schoolDataSet1.TeachersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6688,14 +6749,14 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet.TeachersDataTable dataTable) {
+        public virtual int Update(schoolDataSet1.TeachersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(schoolDataSet dataSet) {
+        public virtual int Update(schoolDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Teachers");
         }
         
@@ -6718,7 +6779,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Name, string Original_Number, string Original_Adress, global::System.Nullable<global::System.DateTime> Original_DOB, string Original_SubjectName, int Original_SubjectID) {
+        public virtual int Delete(int Original_ID, string Original_Name, string Original_Number, string Original_Adress, global::System.Nullable<global::System.DateTime> Original_DOB, int Original_SubjectID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
@@ -6750,13 +6811,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_SubjectName == null)) {
-                throw new global::System.ArgumentNullException("Original_SubjectName");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_SubjectName));
-            }
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_SubjectID));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_SubjectID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6777,7 +6832,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, string Number, string Adress, global::System.Nullable<global::System.DateTime> DOB, string SubjectName, int SubjectID) {
+        public virtual int Insert(string Name, string Number, string Adress, global::System.Nullable<global::System.DateTime> DOB, int SubjectID) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -6802,13 +6857,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((SubjectName == null)) {
-                throw new global::System.ArgumentNullException("SubjectName");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(SubjectName));
-            }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(SubjectID));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(SubjectID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6829,7 +6878,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string Number, string Adress, global::System.Nullable<global::System.DateTime> DOB, string SubjectName, int SubjectID, int Original_ID, string Original_Name, string Original_Number, string Original_Adress, global::System.Nullable<global::System.DateTime> Original_DOB, string Original_SubjectName, int Original_SubjectID, int ID) {
+        public virtual int Update(string Name, string Number, string Adress, global::System.Nullable<global::System.DateTime> DOB, int SubjectID, int Original_ID, string Original_Name, string Original_Number, string Original_Adress, global::System.Nullable<global::System.DateTime> Original_DOB, int Original_SubjectID, int ID) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -6854,52 +6903,40 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((SubjectName == null)) {
-                throw new global::System.ArgumentNullException("SubjectName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(SubjectName));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(SubjectID));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(SubjectID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Name));
             }
             if ((Original_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Number));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Number));
             }
             if ((Original_Adress == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Adress));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Adress));
             }
             if ((Original_DOB.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_DOB.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_DOB.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_SubjectName == null)) {
-                throw new global::System.ArgumentNullException("Original_SubjectName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_SubjectName));
-            }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_SubjectID));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_SubjectID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6920,8 +6957,8 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string Number, string Adress, global::System.Nullable<global::System.DateTime> DOB, string SubjectName, int SubjectID, int Original_ID, string Original_Name, string Original_Number, string Original_Adress, global::System.Nullable<global::System.DateTime> Original_DOB, string Original_SubjectName, int Original_SubjectID) {
-            return this.Update(Name, Number, Adress, DOB, SubjectName, SubjectID, Original_ID, Original_Name, Original_Number, Original_Adress, Original_DOB, Original_SubjectName, Original_SubjectID, Original_ID);
+        public virtual int Update(string Name, string Number, string Adress, global::System.Nullable<global::System.DateTime> DOB, int SubjectID, int Original_ID, string Original_Name, string Original_Number, string Original_Adress, global::System.Nullable<global::System.DateTime> Original_DOB, int Original_SubjectID) {
+            return this.Update(Name, Number, Adress, DOB, SubjectID, Original_ID, Original_Name, Original_Number, Original_Adress, Original_DOB, Original_SubjectID, Original_ID);
         }
     }
     
@@ -7177,7 +7214,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(schoolDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(schoolDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._classesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Classes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -7259,7 +7296,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(schoolDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(schoolDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._classesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Classes.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -7333,7 +7370,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(schoolDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(schoolDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._roomsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Rooms.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -7431,7 +7468,7 @@ SELECT ID, Name, Number, Adress, DOB, SubjectName, SubjectID FROM Teachers WHERE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(schoolDataSet dataSet) {
+        public virtual int UpdateAll(schoolDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

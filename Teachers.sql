@@ -1,7 +1,7 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Teachers]    Script Date: 19.06.2017 13:54:00 ******/
+/****** Object:  Table [dbo].[Teachers]    Script Date: 19.06.2017 15:21:54 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -14,6 +14,7 @@ CREATE TABLE [dbo].[Teachers](
 	[Number] [nvarchar](50) NULL,
 	[Adress] [nvarchar](50) NULL,
 	[DOB] [datetime] NULL,
+	[SubjectName] [nvarchar](50) NOT NULL,
 	[SubjectID] [int] NOT NULL,
  CONSTRAINT [PK_Teachers] PRIMARY KEY CLUSTERED 
 (
