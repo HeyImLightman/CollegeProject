@@ -1671,7 +1671,6 @@ namespace WpfApp5 {
                 this.columnUserID.AutoIncrement = true;
                 this.columnUserID.AutoIncrementSeed = -1;
                 this.columnUserID.AutoIncrementStep = -1;
-                this.columnUserID.AllowDBNull = false;
                 this.columnUserID.ReadOnly = true;
                 this.columnUserName.MaxLength = 50;
                 this.columnPassword.MaxLength = 50;
@@ -3444,7 +3443,12 @@ namespace WpfApp5 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int UserID {
                 get {
-                    return ((int)(this[this.tableLogin.UserIDColumn]));
+                    try {
+                        return ((int)(this[this.tableLogin.UserIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'UserID\' в таблице \'Login\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableLogin.UserIDColumn] = value;
@@ -3481,6 +3485,18 @@ namespace WpfApp5 {
                 set {
                     this[this.tableLogin.PasswordColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUserIDNull() {
+                return this.IsNull(this.tableLogin.UserIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUserIDNull() {
+                this[this.tableLogin.UserIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

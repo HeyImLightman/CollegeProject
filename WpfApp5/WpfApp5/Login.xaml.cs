@@ -27,7 +27,7 @@ namespace WpfApp5
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost\BDschool; Initial Catalog=login; Integrated Security=True;");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost\MEGAHYPER ; Initial Catalog=school; Integrated Security=True");
             try
             {
                 if (sqlCon.State == System.Data.ConnectionState.Closed)

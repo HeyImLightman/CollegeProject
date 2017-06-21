@@ -1,7 +1,7 @@
 USE [school]
 GO
 
-/****** Object:  Table [dbo].[Pupils]    Script Date: 19.06.2017 13:52:42 ******/
+/****** Object:  Table [dbo].[Pupils]    Script Date: 21.06.2017 22:19:08 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -21,12 +21,5 @@ CREATE TABLE [dbo].[Pupils](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
-GO
-
-ALTER TABLE [dbo].[Pupils]  WITH CHECK ADD  CONSTRAINT [FK_Ucheniks_Classes] FOREIGN KEY([ClassID])
-REFERENCES [dbo].[Classes] ([ID])
-GO
-
-ALTER TABLE [dbo].[Pupils] CHECK CONSTRAINT [FK_Ucheniks_Classes]
 GO
 

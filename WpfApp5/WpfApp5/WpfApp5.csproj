@@ -80,6 +80,9 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="schoolDataSet1.cs">
+      <DependentUpon>schoolDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="schoolDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
