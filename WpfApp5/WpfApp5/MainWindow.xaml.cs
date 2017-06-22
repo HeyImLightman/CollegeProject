@@ -48,22 +48,22 @@ namespace WpfApp5
             private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
             
-            Form3 f1 = new Form3();
-            f1.ShowDialog();
+            Form3 f2 = new Form3();
+            f2.ShowDialog();
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
 
-            Teachers f1 = new Teachers();
-            f1.ShowDialog();
+            Teachers f3 = new Teachers();
+            f3.ShowDialog();
         }
 
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
 
-            Subjects f1 = new Subjects();
-            f1.ShowDialog();
+            Subjects f4 = new Subjects();
+            f4.ShowDialog();
         }
     }
 }

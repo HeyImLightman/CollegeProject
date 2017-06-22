@@ -12,14 +12,17 @@ using System.Data.SqlClient;
 namespace WpfApp5
 {
     public partial class Form3 : Form
-    { SqlConnection con = new SqlConnection(@"Data Source=ADMIN-ПК\MEGAHYPER;Initial Catalog=school;Integrated Security=True");
-        
+    {
+        SqlDataAdapter sda;
+        SqlCommandBuilder scb;
+        DataTable dt;
+        SqlConnection con = new SqlConnection(@"Data Source=ADMIN-ПК\MEGAHYPER;Initial Catalog=school;Integrated Security=True");
         public Form3()
         {
             InitializeComponent();
         }
 
-        //Подключение не было закрыто.Подключение открыто.
+        
 
 
 
@@ -31,6 +34,12 @@ namespace WpfApp5
             cmd.CommandText = "insert into Pupils values('" + textBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox2.Text + "','" + textBox5.Text + "')";
             cmd.ExecuteNonQuery();
             con.Close();
+            disp_data();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
 
             MessageBox.Show("Данные внесены");
         }
@@ -40,14 +49,17 @@ namespace WpfApp5
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select = from Pupils";
+            cmd.CommandText = "select * from Pupils";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dt);
             dataGridView2.DataSource = dt;
             con.Close();
+
+
         }
+
 
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -79,8 +91,8 @@ namespace WpfApp5
 
         }
 
-
         
+
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -88,6 +100,49 @@ namespace WpfApp5
 
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete from Pupils where Name='"+textBox1.Text+"'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            disp_data();
+            textBox1.Clear();
+
+            MessageBox.Show("Данные удалены");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            disp_data();
+
+            MessageBox.Show("Данные Выведены");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Pupils where Name='" + textBox1.Text + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dt);
+            dataGridView2.DataSource = dt;
+            con.Close();
+            textBox1.Clear();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            scb = new SqlCommandBuilder(sda);
+            sda.Update(dt);
+        }
     }
 }

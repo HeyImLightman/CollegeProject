@@ -48,6 +48,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             numberLabel = new System.Windows.Forms.Label();
             adressLabel = new System.Windows.Forms.Label();
             dOBLabel = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@
             // numberLabel
             // 
             numberLabel.AutoSize = true;
-            numberLabel.Location = new System.Drawing.Point(463, 65);
+            numberLabel.Location = new System.Drawing.Point(682, 69);
             numberLabel.Name = "numberLabel";
             numberLabel.Size = new System.Drawing.Size(95, 13);
             numberLabel.TabIndex = 8;
@@ -70,7 +71,7 @@
             // adressLabel
             // 
             adressLabel.AutoSize = true;
-            adressLabel.Location = new System.Drawing.Point(463, 91);
+            adressLabel.Location = new System.Drawing.Point(682, 95);
             adressLabel.Name = "adressLabel";
             adressLabel.Size = new System.Drawing.Size(87, 13);
             adressLabel.TabIndex = 10;
@@ -79,7 +80,7 @@
             // dOBLabel
             // 
             dOBLabel.AutoSize = true;
-            dOBLabel.Location = new System.Drawing.Point(463, 120);
+            dOBLabel.Location = new System.Drawing.Point(682, 124);
             dOBLabel.Name = "dOBLabel";
             dOBLabel.Size = new System.Drawing.Size(86, 13);
             dOBLabel.TabIndex = 12;
@@ -89,7 +90,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(463, 12);
+            nameLabel.Location = new System.Drawing.Point(682, 16);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(77, 13);
             nameLabel.TabIndex = 4;
@@ -99,7 +100,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(463, 38);
+            label1.Location = new System.Drawing.Point(682, 42);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(58, 13);
             label1.TabIndex = 20;
@@ -118,49 +119,53 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 9);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(441, 285);
+            this.dataGridView2.Size = new System.Drawing.Size(644, 401);
             this.dataGridView2.TabIndex = 15;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(457, 187);
+            this.button1.Location = new System.Drawing.Point(676, 191);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 26);
             this.button1.TabIndex = 16;
-            this.button1.Text = "Intsert";
+            this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(543, 187);
+            this.button2.Location = new System.Drawing.Point(762, 191);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 26);
             this.button2.TabIndex = 17;
-            this.button2.Text = "Delete";
+            this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(629, 187);
+            this.button3.Location = new System.Drawing.Point(676, 223);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(80, 26);
             this.button3.TabIndex = 18;
-            this.button3.Text = "Ubdate";
+            this.button3.Text = "Поиск";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(715, 187);
+            this.button4.Location = new System.Drawing.Point(934, 191);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(80, 26);
             this.button4.TabIndex = 19;
-            this.button4.Text = "Display";
+            this.button4.Text = "Дисплей";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pupilsTableAdapter
             // 
@@ -181,44 +186,57 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(561, 9);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(780, 13);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(223, 20);
             this.textBox1.TabIndex = 21;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(561, 91);
+            this.textBox2.Location = new System.Drawing.Point(780, 95);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(223, 20);
             this.textBox2.TabIndex = 22;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(561, 62);
+            this.textBox3.Location = new System.Drawing.Point(780, 66);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(223, 20);
             this.textBox3.TabIndex = 23;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(561, 36);
+            this.textBox4.Location = new System.Drawing.Point(780, 40);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(223, 20);
             this.textBox4.TabIndex = 24;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(561, 120);
+            this.textBox5.Location = new System.Drawing.Point(780, 124);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(223, 20);
             this.textBox5.TabIndex = 25;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(848, 191);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(80, 26);
+            this.button5.TabIndex = 26;
+            this.button5.Text = "Обновить";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 437);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1066, 437);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -234,9 +252,8 @@
             this.Controls.Add(numberLabel);
             this.Controls.Add(adressLabel);
             this.Controls.Add(dOBLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form3";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Ученики";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pupilsBindingSource)).EndInit();
@@ -263,5 +280,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button5;
     }
 }
