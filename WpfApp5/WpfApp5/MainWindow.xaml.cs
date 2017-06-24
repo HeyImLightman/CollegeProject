@@ -65,5 +65,12 @@ namespace WpfApp5
             Subjects f4 = new Subjects();
             f4.ShowDialog();
         }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+
+            Assessments f3 = new Assessments();
+            f3.ShowDialog();
+        }
     }
 }

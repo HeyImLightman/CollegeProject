@@ -32,20 +32,22 @@ namespace WpfApp5
 
 
         private void button1_Click_1(object sender, EventArgs e)
-        {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into Classes values('" + textBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox2.Text + "')";
-            cmd.ExecuteNonQuery();
-            con.Close();
-            disp_data();
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
+        { DialogResult dialog = MessageBox.Show("Вы уверены, что хотите сохранить?", "Сохранить", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into Classes values('" + textBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox2.Text + "')";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                disp_data();
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
 
-            MessageBox.Show("Данные внесены");
+            }
         }
 
         private void disp_data()
@@ -70,17 +72,19 @@ namespace WpfApp5
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from Classes where Name='" + textBox1.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-            disp_data();
-            textBox1.Clear();
+        { DialogResult dialog = MessageBox.Show("Вы уверены, что хотите удалить?", "Удалить", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from Classes where Name='" + textBox1.Text + "'";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                disp_data();
+                textBox1.Clear();
 
-            MessageBox.Show("Данные удалены");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
