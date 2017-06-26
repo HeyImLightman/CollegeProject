@@ -63,3 +63,4 @@ C:\Users\Alex\Documents\TortoiseSave\CollegeProject\WpfApp5\WpfApp5\obj\Debug\Wp
 D:\Save\CollegeProject\WpfApp5\WpfApp5\obj\Debug\Login.g.cs
 D:\Save\CollegeProject\WpfApp5\WpfApp5\obj\Debug\Login.baml
 D:\Save\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Assessments.resources
+D:\Save\CollegeProject\WpfApp5\WpfApp5\obj\Debug\WpfApp5.Rooms.resources

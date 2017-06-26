@@ -72,5 +72,12 @@ namespace WpfApp5
             Assessments f3 = new Assessments();
             f3.ShowDialog();
         }
+
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+
+            Rooms f3 = new Rooms();
+            f3.ShowDialog();
+        }
     }
 }

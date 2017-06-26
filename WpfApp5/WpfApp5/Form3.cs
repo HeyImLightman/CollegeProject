@@ -139,7 +139,7 @@ namespace WpfApp5
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Pupils where Name='%" + textBox1.Text + "'";
+            cmd.CommandText = "select * from Pupils where Name like '%" + textBox1.Text + "%'";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

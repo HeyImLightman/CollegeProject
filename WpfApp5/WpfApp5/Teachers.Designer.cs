@@ -107,6 +107,15 @@
             subjectIDLabel.TabIndex = 12;
             subjectIDLabel.Text = "Предмет:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(862, 155);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(73, 13);
+            label1.TabIndex = 24;
+            label1.Text = "ID предмета:";
+            // 
             // teachersBindingSource
             // 
             this.teachersBindingSource.DataMember = "Teachers";
@@ -226,15 +235,6 @@
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(862, 155);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(73, 13);
-            label1.TabIndex = 24;
-            label1.Text = "ID предмета:";
             // 
             // textBox6
             // 
